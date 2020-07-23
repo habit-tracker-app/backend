@@ -4,6 +4,18 @@ const port=80;
 const expressLatouts=require('express-ejs-layouts');
 const db=require('./config/mongoose');
 
+
+
+const sassMiddleware=require('node-sass-middleware');
+
+app.use(sassMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true,
+    outputStyle:'extended',
+    prefix:'/css'
+}));
+
 app.use(express.static('./assets'));
 
 app.use(expressLatouts);
