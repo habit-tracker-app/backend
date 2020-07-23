@@ -1,4 +1,6 @@
 module.exports.home=function(req,res){
 
-   return res.end("home");
+   return res.render('home',{
+      title:"Habtify"
+   });
 }
