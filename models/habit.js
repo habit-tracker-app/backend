@@ -11,20 +11,10 @@ const habitSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    time:[
-        {
+    time:{
             type:String,
             required:true
-        }
-        
-    ],
-    days:[
-        {
-            type:String
-        }
-        
-    ]
-
+        },
 
 },{
     timestamps:true

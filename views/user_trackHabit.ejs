@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/css/habits.css">
+<div>
+    <ul>
+        <%for(habit of habit_list){%>
+            <li>
+                <p><%=habit.title%></p>
+                <p><%=habit.details%></p>
+            </li>
+        <%}%>
+    </ul>
+</div>

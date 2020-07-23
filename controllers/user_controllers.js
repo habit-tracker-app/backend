@@ -6,8 +6,7 @@ module.exports.createSession=function(req,res){
     Habit.create({
         title: req.body.title,
         details: req.body.details,
-        time: req.body.time,
-        days: req.body.days
+        time: req.body.time
     },function(err,newHabit){
 
         if(err){
