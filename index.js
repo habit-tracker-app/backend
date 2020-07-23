@@ -3,6 +3,8 @@ const app=express();
 const port=80;
 const expressLatouts=require('express-ejs-layouts');
 
+app.use(express.static('./assets'));
+
 app.use(expressLatouts);
 
 //setup view engine
