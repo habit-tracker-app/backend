@@ -1,8 +1,7 @@
 const mongoose=require('mongoose');
 
-// mongoose.connect('mongodb+srv://skayush731:Yaadnhhai731@cluster0.rcyls.mongodb.net/healthTracker?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
-mongoose.connect('mongodb://localhost/health_tracker', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/health', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db=mongoose.connection;
 
