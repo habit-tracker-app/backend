@@ -1,0 +1,19 @@
+{
+  "name": "habbit-tracker-app",
+  "version": "1.0.0",
+  "description": "Habbit tracker app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushkumar731/Habbit_tracker_app.git"
+  },
+  "author": "Ayush Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayushkumar731/Habbit_tracker_app/issues"
+  },
+  "homepage": "https://github.com/ayushkumar731/Habbit_tracker_app#readme"
+}
