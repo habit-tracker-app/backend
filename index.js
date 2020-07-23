@@ -18,17 +18,19 @@ app.use(sassMiddleware({
 
 app.use(express.static('./assets'));
 
+
+app.use(express.urlencoded());
+
+//setup view engine
+app.set('view engine','ejs');
+app.set('views','./views');
+
 app.use(expressLatouts);
 
 //extract style and scripts from sub-pages into the layout
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-
-
-//setup view engine
-app.set('view engine','ejs');
-app.set('views','./views');
 
 //use express router
 app.use('/',require('./routes'));

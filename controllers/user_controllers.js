@@ -1,4 +1,19 @@
+const Habit=require('../models/habit');
+
 module.exports.createSession=function(req,res){
 
-    return res.send('<h1>user</h1>');
+    console.log(req.body);
+    Habit.create({
+        title: req.body.title,
+        details: req.body.details,
+        time: req.body.time,
+        days: req.body.days
+    },function(err,newHabit){
+
+        if(err){
+            console.log('error in creating a habit');
+            return;
+        }
+        return res.redirect('back');
+    });
 }
