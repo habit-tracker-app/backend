@@ -6,6 +6,7 @@ module.exports.habits= async function(req,res){
     {
         let habits = await Habit.find({});
             console.log(habits);
+            
             return res.render('./user_trackHabit',
             {
                 title:'My Habits',

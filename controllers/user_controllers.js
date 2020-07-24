@@ -12,15 +12,18 @@ module.exports.createSession= async function(req,res){
                     details: req.body.details,
                     time: req.body.time
                 });
+                req.flash('success','Added Successfully')
                 return res.redirect('/users/tracks-habits');
             }catch(err){
-                if(err){console.log('error in Creating data while enter'); 
-                 return;
+                if(err){
+                    console.log('error in Creating data while enter'); 
+                    return;
                 }
             }
            
         }
         else{
+            req.flash('error','habit allready exist');
             return res.redirect('back');
         }
       
