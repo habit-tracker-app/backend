@@ -1,18 +1,19 @@
 const Habit=require('../models/habit');
 
-module.exports.createSession=function(req,res){
+module.exports.createSession= async function(req,res){
 
-    console.log(req.body);
-    Habit.create({
-        title: req.body.title,
-        details: req.body.details,
-        time: req.body.time
-    },function(err,newHabit){
-
-        if(err){
-            console.log('error in creating a habit');
-            return;
-        }
+    try{
+        console.log(req.body);
+        let habit = await Habit.create({
+            title: req.body.title,
+            details: req.body.details,
+            time: req.body.time
+        });
         return res.redirect('back');
-    });
+    }catch(err){
+        console.log('error in creating a habit');
+        return;
+    }
+
+    
 }

@@ -1,15 +1,20 @@
 const Habit=require('../models/habit');
 
-module.exports.habits=function(req,res){
+module.exports.habits= async function(req,res){
 
-    Habit.find({},function(err,habits){
-        if(err){
-            console.log('error in fetching contact from db');
-            return;
-        }
-        return res.render('./user_trackHabit',{
-            title:"My Habits",
-            habit_list:habits
-        });
-    });
+    try
+    {
+        let habits = await Habit.find({});
+            console.log(habits);
+            return res.render('./user_trackHabit',
+            {
+                title:'My Habits',
+                habit_list:habits
+            });
+    }
+    catch(err)
+    {
+        console.log('error in fetching habit from db');
+        return;
+    }
 }
