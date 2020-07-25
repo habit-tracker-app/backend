@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const weekSchema=new mongoose.Schema({
-    week:{
+    habit_status:{
         type:String,
         required:true
     },
-    date:{
+    date_created:{
         type:String,
         required:true
     },

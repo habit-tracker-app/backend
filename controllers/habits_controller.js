@@ -1,5 +1,5 @@
 const Habit=require('../models/habit');
-const Week=require('../models/week');
+const HabitStatus=require('../models/week');
 module.exports.habits= async function(req,res){
 
     try
@@ -28,20 +28,20 @@ module.exports.changeStatus= async function(req,res){
             status=req.query.status;
         }
         let dateToFind = req.query.date;
-        let statusToken = await Week.findOne({
+        let statusToken = await HabitStatus.findOne({
             habit:req.query.id,
-            date:dateToFind
+            date_created:dateToFind
         });
         if(statusToken){
-            await statusToken.updateOne({week:status});
+            await statusToken.updateOne({habit_status:status});
             statusToken.save();
         }
         else{
             let habit = await Habit.findById(req.query.id);
             if(habit){
-                await Week.create({
-                    week:status,
-                    date:dateToFind,
+                await HabitStatus.create({
+                    habit_status:status,
+                    date_created:dateToFind,
                     habit:habit.id
                 });
             }
@@ -65,7 +65,7 @@ module.exports.delete= async function(req,res){
     try{
         for(item of req.query.info){
             await Habit.findByIdAndDelete(item);
-            await Week.deleteMany({habit:item});
+            await HabitStatus.deleteMany({habit:item});
         }
         if(req.xhr){
             return res.status(200).json({
