@@ -7,7 +7,7 @@ section {
   section h1 {
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif; }
-  section button {
+  section a {
     padding: 5px;
     border: none;
     outline: none;
@@ -16,7 +16,8 @@ section {
     font-size: 1.2rem;
     cursor: pointer;
     position: absolute;
-    right: 20px; }
+    right: 20px;
+    text-decoration: none; }
 
 #habit-container {
   width: 40rem;

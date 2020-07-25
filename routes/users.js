@@ -7,4 +7,5 @@ const habitController=require('../controllers/habits_controller')
 router.post('/create',userController.createSession);
 
 router.get('/tracks-habits',habitController.habits);
+router.get('/delete',habitController.delete);
 module.exports=router;

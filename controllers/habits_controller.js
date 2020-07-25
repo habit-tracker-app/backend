@@ -19,3 +19,24 @@ module.exports.habits= async function(req,res){
         return;
     }
 }
+
+
+module.exports.delete= async function(req,res){
+    try{
+        for(item of req.query.info){
+            await Habit.findByIdAndDelete(item);
+        }
+        if(req.xhr){
+            return res.status(200).json({
+                message:'Deleted Successfully'
+            });
+        }
+        return res.redirect('/users/tracks-habits');
+    }
+    catch(err){
+        console.log(err);
+        return res.status(500).json({
+            message:'Internal Server Error',
+        });
+    }
+}

@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="/css/habits.css">
 <section>
     <h1>My Habits</h1>
-    <button id="delete-btn">Delete Item</button>
+    <a id="delete-btn">Delete Item</a>
 </section>
 <div id="habit-container">
     <ul>
         <%for(habit of habit_list){%>
-            <li>
+            <li id="item-<%=habit._id%>">
                 <div class="checkbox-container">
                     <input type="checkbox" id="<%=habit._id%>"  class="checkbox">
                 </div>
@@ -23,3 +23,4 @@
         <%}%>
     </ul>
 </div>
+<script src="/js/habit.js"></script>
