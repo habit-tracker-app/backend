@@ -8,11 +8,15 @@ function changeStatusCall(id,status){
     $.ajax({
             type:'get',
             url:'/users/changeStatus',
-            data:{id:id,status:status,date:date},
+            data:{
+                id:id,
+                status:status,
+                date:date
+            },
             success:function(data){
                 new Noty({
                     theme: 'relax',
-                    text: "status updates",
+                    text: status,
                     type: 'success',
                     layout: 'topRight',
                     timeout: 1500

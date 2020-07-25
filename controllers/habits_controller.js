@@ -50,10 +50,9 @@ module.exports.changeStatus= async function(req,res){
             return res.status(200).json({
                     message:'Habit Status Created',
                 });
-        }else{
-            return res.redirect('back');
         }
-        return res.redirect('back');
+            return res.redirect('back');
+        
     }catch(err){
         console.log('Error in updating done Status',err);
         return;
