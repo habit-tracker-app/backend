@@ -8,6 +8,7 @@ module.exports.createSession= async function(req,res){
         if(!habit){
             try{
                 console.log(req.body);
+                
                let habits=await  Habit.create({
                     title: req.body.title,
                     details: req.body.details,
