@@ -1,6 +1,5 @@
 main{
     padding: 5rem 3rem;
-    height: 86.5vh;
     position: relative;
   }
 form{
@@ -61,15 +60,3 @@ form{
     }
 }
 
-#snackBar{
-    background-color: green;
-    width: 10rem;
-    text-align: center;
-    color: white;
-    padding: 8px;
-    font-size: 1.1rem;
-    position: relative;
-    bottom: 50px;
-    display: none;
-
-}

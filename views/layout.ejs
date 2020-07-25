@@ -19,10 +19,12 @@
         <%-body%>
     </main>
 
-    <%- include('_footer');%>
+
+    <!-- to require jquety -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <%- script%>
 
+    <!-- use for noty to notify -->
     <script>
         <% if(flash.success && flash.success.length>0){%>
             new Noty({

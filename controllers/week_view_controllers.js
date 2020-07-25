@@ -1,6 +1,7 @@
 let Habit=require('../models/habit');
 let HabitStatus=require('../models/week');
 
+//to render the week view
 module.exports.weekView=async function(req,res){
     let habits=await Habit.find({});
     return res.render('./week_views',{
@@ -9,6 +10,7 @@ module.exports.weekView=async function(req,res){
     });
 }
 
+//getting stautus of particular date
 module.exports.dayStatus = async function(req,res)
 {
     queryDate = new Date(req.query.date);

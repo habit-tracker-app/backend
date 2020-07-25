@@ -1,5 +1,6 @@
 const Habit=require('../models/habit');
 
+//when user fill the habit then execute 
 module.exports.createSession= async function(req,res){
 
     try{
@@ -12,7 +13,9 @@ module.exports.createSession= async function(req,res){
                     details: req.body.details,
                     time: req.body.time
                 });
+                //to show the notification when task added
                 req.flash('success','Added Successfully')
+                //render to that page where all habits show
                 return res.redirect('/users/tracks-habits');
             }catch(err){
                 if(err){
@@ -23,6 +26,7 @@ module.exports.createSession= async function(req,res){
            
         }
         else{
+            //to show the notification when added task add again
             req.flash('error','habit allready exist');
             return res.redirect('back');
         }

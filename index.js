@@ -2,6 +2,8 @@ const express=require('express');
 const app=express();
 const port=80;
 const expressLatouts=require('express-ejs-layouts');
+
+//cookie-parser and express-session required for noto
 const cookieParser=require('cookie-parser');
 const session=require('express-session');
 const db=require('./config/mongoose');
@@ -9,6 +11,7 @@ const sassMiddleware=require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleWare=require('./config/middleware');
 
+//using sass for styling
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
@@ -17,6 +20,7 @@ app.use(sassMiddleware({
     prefix:'/css'
 }));
 
+//to access the assets folder
 app.use(express.static('./assets'));
 
 
@@ -32,6 +36,7 @@ app.use(expressLatouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
+//use for noty which is required
 app.use(session({
     name: 'health-tracker',
 
@@ -44,6 +49,7 @@ app.use(session({
     }
 }));
 
+// use flash-connet to notify the user
 app.use(flash());
 app.use(customMiddleWare.setFlash);
 

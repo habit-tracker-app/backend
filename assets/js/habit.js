@@ -1,9 +1,10 @@
-var doneButtons = document.querySelectorAll('.done');
-var notDoneButtons = document.querySelectorAll('.not-done');
-var nullButtons = document.querySelectorAll('.null-status');
+const doneButtons = $('.done');
+const notDoneButtons = $('.not-done');
+const nullButtons = $('.null-status');
 
-
+// to change staus and create status if not present 
 function changeStatusCall(id,status){
+    //to get the current date
     let date = new Date().toLocaleDateString();
     $.ajax({
             type:'get',
@@ -29,7 +30,7 @@ function changeStatusCall(id,status){
         });
 }
 
-
+//add event listener for done 
 for(button of doneButtons){
     button.addEventListener('click',function(){
         let idDone = this.id.slice(5);
@@ -37,7 +38,7 @@ for(button of doneButtons){
     });
 }
 
-//adding event listener to not done buttons
+//adding event listener for not-done
 for(button of notDoneButtons){
     button.addEventListener('click',function(){
         let idNotDone = this.id.slice(9);
@@ -45,7 +46,7 @@ for(button of notDoneButtons){
     });
 }
 
-//adding event listener to update button
+//adding event listener for null
 for(button of nullButtons){
     button.addEventListener('click',function(){
         let idNull = this.id.slice(5);
@@ -53,17 +54,19 @@ for(button of nullButtons){
     });
 }
 
-
+//to delte the checked habit
 $('#delete-btn').click(function(){
 
+    //fetching all the checkbox
     let allCheckbox = document.querySelectorAll('.checkbox-container input');
     let checkedItem = [];
-
+    //collecting id of all checkbox
     for(item of allCheckbox){
         if(item.checked){
             checkedItem.push(item.id);
         }
     }
+    //to ask the user before delete
     const isDelete = confirm("Do you really want to delete records?");
     if(isDelete==true){
 
@@ -75,6 +78,7 @@ $('#delete-btn').click(function(){
                 for(id of checkedItem){
                     $(`#item-${id}`).remove(); 
                 }
+                //to show the notification when deleted
                 new Noty({
                     theme: 'relax',
                     text: "Habit Deleted Successfully",

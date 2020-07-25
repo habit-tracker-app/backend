@@ -9,6 +9,7 @@ const weekSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    //habitStatus belongs to the habit
     habit:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Habit'

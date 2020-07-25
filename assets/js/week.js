@@ -1,12 +1,12 @@
 let lastSevenDates = [];
 let currDate = new Date();
-//getting last seven dates including curernt dates
-for(var i=6;i>=0;i--){
+//getting dates
+for(var i=7;i>=0;i--){
     lastSevenDates.push(new Date(currDate.getTime() - (i * 24 * 60 * 60 * 1000)));
 }
 
 //getting all the habit for week page
-let habitsItem = document.querySelectorAll('.week-item-container');
+let habitsItem = $('.week-item-container');
 let habitId = [];
 
 //getting all the id's of habit from week view page
@@ -77,14 +77,12 @@ for(id of habitId){
                         let id = `#list-${this.id}`
                         let listItem = $(id);
                         listItem.css('display','block');
-                        setTimeout(function()
-                        {
+                        setTimeout(function(){
                             listItem.css('display','none');
-                        },2000);
+                        },5000);
                     });
                 },
-                error:function(err)
-                {
+                error:function(err){
                     console.log(`Error in ajax Call ${status}`);
                 }
             }
@@ -95,34 +93,27 @@ for(id of habitId){
 //function to changes status for the particular habit Id and date in status table
 function changeStatusCall(id,status,date)
 {
-    $.ajax(
-        {
+    $.ajax({
             type:'get',
             url:'/users/changeStatus',
             data:{id:id,status:status,date:date},
-            error:function(err)
-            {
+            error:function(err){
                 console.log(`Error in ajax Call ${status}`);
             }
-        }
-    );
+        });
 }
 
 //getting icons for status and updating them in view
-function getStatusHTML(status)
-{
-    let rightHtml = '<i class="fa fa-check" aria-hidden="true"></i>';
-    let crossHtml = '<i class="fa fa-times" aria-hidden="true"></i>';
-    if(status === 'done')
-    {
+function getStatusHTML(status){
+    let rightHtml = '<i class="fa fa-check"></i>';
+    let crossHtml = '<i class="fa fa-times"></i>';
+    if(status === 'done'){
         return rightHtml;
     }
-    else if(status === 'not-done')
-    {
+    else if(status === 'not-done'){
         return crossHtml;
     }
-    else
-    {
+    else{
         return "";
     }
 }
