@@ -37,6 +37,20 @@
                     text-align: center;
                     .option-list{
                         display:none;
+                        li{
+                            list-style: none;
+                            margin-bottom: 10px;
+                            
+                            button{
+                                font-size: 2rem;
+                                background-color: rgb(3, 7, 63);
+                                color: white;
+                                cursor: pointer;
+                                border: none;
+                                outline: none;
+                                padding: 5px;
+                            }
+                        }
                     }
                     .status-value{
                         font-size: 3.3rem;

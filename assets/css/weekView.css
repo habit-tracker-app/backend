@@ -33,6 +33,17 @@
           text-align: center; }
           .week-list-container .week-item-container .day-container .item-container .status-container .option-list {
             display: none; }
+            .week-list-container .week-item-container .day-container .item-container .status-container .option-list li {
+              list-style: none;
+              margin-bottom: 10px; }
+              .week-list-container .week-item-container .day-container .item-container .status-container .option-list li button {
+                font-size: 2rem;
+                background-color: #03073f;
+                color: white;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                padding: 5px; }
           .week-list-container .week-item-container .day-container .item-container .status-container .status-value {
             font-size: 3.3rem;
             color: black; }
