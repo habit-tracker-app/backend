@@ -74,7 +74,7 @@ ___
 >Install dependencies to start the project.
 
 ```
-npm start   
+npm install   
 ```
 
 
@@ -86,7 +86,10 @@ mongodb://localhost/health
 ```
 npm start
 ```
-
+>To run in the browser 
+```
+localhost
+``` 
 ---
 
 ## Video To Introduce
