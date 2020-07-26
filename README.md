@@ -91,4 +91,4 @@ npm start
 
 ## Video To Introduce
 
-![video](/assets/images/tracker.gif)
+![video](/assets/videos/tracker.gif)
