@@ -17,7 +17,6 @@ for(item of habitsItem){
 //iterating over all the habit id's and getting the status of all the seven date and updating it
 for(id of habitId){
     for(date of lastSevenDates){
-        let result = [];
         //getting status of particular date
         $.ajax({
                 type:'get',

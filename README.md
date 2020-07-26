@@ -34,10 +34,8 @@ ___
         * home.css
         * layout.css
         * weekView.css
-    * images 
-        * habitpage.png
-        * homepage.png
-        * weekpage.png
+    * videos 
+        * tracker.gif
     * js
         * habit.js
         * week.js
@@ -89,16 +87,8 @@ mongodb://localhost/health
 npm start
 ```
 
-**HomePage**
-
-![home page](/assets/images/homepage.png)
-
 ---
 
-**HabitListPage**
+## Video To Introduce
 
-![habit page](/assets/images/habitpage.png)
-
-**WeekViewPage**
-
-![week view](/assets/images/weekpage.png)
+![video](/assets/images/tracker.gif)
